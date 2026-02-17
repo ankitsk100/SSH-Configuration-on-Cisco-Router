@@ -5,7 +5,7 @@ This project demonstrates how to securely configure **SSH (Secure Shell)** on a 
 The lab focuses on enabling secure remote access using local authentication and RSA encryption keys.
 
 
-![](docs/topology.png)
+![Topology](docs/topology.png)
 
 ---
 
