@@ -39,3 +39,11 @@ exit
 
 end
 write memory
+
+
+
+
+
+! To verify the SSH from remote PC
+
+ssh -l admin 192.168.10.1
