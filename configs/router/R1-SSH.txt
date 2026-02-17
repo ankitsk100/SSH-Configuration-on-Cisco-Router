@@ -1,0 +1,41 @@
+! ================================
+! Router SSH Configuration
+! Device: R1-SSH
+! ================================
+
+enable
+configure terminal
+
+! Set hostname
+hostname R1-SSH
+
+! Secure privileged mode
+enable password cisco
+
+! Configure domain name
+ip domain-name cisco.com
+
+! Create local user
+username Admin password cisco
+
+! Configure interface IP
+interface gigabitEthernet 0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+exit
+
+! Generate RSA keys (1024 bits)
+crypto key generate rsa
+1024
+
+! Force SSH version 2
+ip ssh version 2
+
+! Configure VTY lines
+line vty 0 15
+ login local
+ transport input ssh
+exit
+
+end
+write memory
